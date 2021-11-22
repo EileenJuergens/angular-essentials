@@ -1,41 +1,11 @@
-
-
-<style>
-  :host {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 14px;
-    color: #333;
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin: 8px 0;
-  }
-
-  p {
-    margin: 0;
-  }
-
-  .content {
-    display: flex;
-    margin: 82px auto 32px;
-    padding: 0 16px;
-    max-width: 960px;
-    flex-direction: column;
-    align-items: center;
-  }
-</style>
-
-
-<div class="content" role="main">
+<div class="container" style="margin: 20px">
     <h1>{{ title }} app is running!</h1>
-    <app-user></app-user>
+    <app-user [name]="rootName" (nameChanged)="onNameChanged($event)"></app-user>
+    <button class="btn btn-primary">Hello</button>
+    <div class="row">
+      <div class="col-xs-12">
+        <app-cart [items]="rootItems" (itemAdded)="onItemWasAdded($event)"></app-cart>
+      </div>
+    </div>
 </div>
 
